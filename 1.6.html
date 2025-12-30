@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Apply Inline, Internal, and External CSS styles to HTML elements</title>
+    
+    <!-- EXTERNAL CSS (linked file) -->
+    <link rel="stylesheet" href="1.6(extarnal).css">
+    
+    <!-- INTERNAL CSS (inside <style> tag) -->
+    <style>
+        /* Internal CSS - Applies only to this page */
+        p { line-height: 1.6; margin-bottom: 20px; }
+        .inline-demo { background: #e8f6f3; padding: 20px; border-left: 5px solid #27ae60; }
+        .internal-demo { background: #fef9e7; padding: 20px; border-left: 5px solid #f39c12; }
+        button { padding: 12px 24px; border: none; border-radius: 25px; cursor: pointer; margin: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 CSS Types Demo</h1>
+        
+        <!-- INLINE CSS (style attribute directly on element) -->
+        <div class="inline-demo">
+            <h2 style="color: #e74c3c; text-align: center;">1. INLINE CSS</h2>
+            <p style="font-size: 18px; font-weight: bold; color: navy;">This paragraph uses <strong>INLINE CSS</strong> directly in the style attribute. 
+            It overrides external/internal styles for this specific element only!</p>
+            <button style="background: #e74c3c; color: white; font-size: 16px;">Inline Button</button>
+        </div>
+        
+        <!-- INTERNAL CSS demonstration -->
+        <div class="internal-demo">
+            <h2>2. INTERNAL CSS (from &lt;style&gt; tag)</h2>
+            <p>This yellow section uses <strong>INTERNAL CSS</strong> defined in the &lt;head&gt; &lt;style&gt; section. 
+            It applies to all matching elements on this single page.</p>
+            <button class="internal-demo">Internal Button</button>
+        </div>
+        
+        <!-- EXTERNAL CSS demonstration -->
+        <div style="background: #d5f4e6; padding: 20px; border-left: 5px solid #27ae60;">
+            <h2>3. EXTERNAL CSS (from styles.css file)</h2>
+            <p>This green section shows <strong>EXTERNAL CSS</strong> loaded from external-styles.css. 
+            Perfect for consistent styling across multiple pages!</p>
+            <ul style="font-size: 16px;">
+                <li>body background gradient ← External</li>
+                <li>White container card ← External</li>
+                <li>Button spacing ← Internal</li>
+                <li>Red heading ← INLINE (overrides!)</li>
+            </ul>
+        </div>
+        
+        <h2>CSS Priority Order (Cascade)</h2>
+        <p><strong>Inline > Internal > External</strong> - Inline always wins for that specific element!</p>
+    </div>
+</body>
+</html>

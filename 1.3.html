@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Create a table-based layout with merged cells, alignment, and caption using HTML</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 2px solid #333; padding: 12px; text-align: center; }
+        caption { font-size: 1.5em; font-weight: bold; padding: 10px; background: #f0f0f0; }
+        .header { background: #4CAF50; color: white; }
+        .highlight { background: #ffeb3b; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Table-Based Layout Demo</h1>
+    
+    <table>
+        <caption>Student Grade Report - Semester 2025</caption>
+        <thead>
+            <tr>
+                <th class="header" rowspan="2">Student ID</th>
+                <th class="header" colspan="3">Subjects</th>
+                <th class="header" rowspan="2">Total</th>
+                <th class="header" rowspan="2">Grade</th>
+            </tr>
+            <tr>
+                <th class="header">Math</th>
+                <th class="header">Science</th>
+                <th class="header">English</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="highlight">C001</td>
+                <td>95</td>
+                <td>88</td>
+                <td>92</td>
+                <td>275</td>
+                <td>A+</td>
+            </tr>
+            <tr>
+                <td>C002</td>
+                <td>82</td>
+                <td rowspan="2" align="center">85</td>
+                <td>78</td>
+                <td>245</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td class="highlight">C003</td>
+                <td colspan="2" align="center">Programming (90)</td>
+                <td>87</td>
+                <td>262</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>C004</td>
+                <td align="right">76</td>
+                <td>82</td>
+                <td align="left">89</td>
+                <td>247</td>
+                <td>B+</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Layout Breakdown</h2>
+    <ul>
+        <li><strong>rowspan="2"</strong>: Merges 2 rows vertically (Student ID, Total, Grade headers)</li>
+        <li><strong>colspan="3"</strong>: Merges 3 columns horizontally (Subjects header)</li>
+        <li><strong>align="center/right/left"</strong>: Text alignment in cells</li>
+        <li><strong>&lt;caption&gt;</strong>: Table title above</li>
+    </ul>
+</body>
+</html>
