@@ -1,0 +1,174 @@
+<html>
+<head>
+    <title>Use div and span elements for layout and apply styling with CSS</title>
+    <style>
+        /* RESET & GLOBAL */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* HEADER DIV - Full width block */
+        .header-div {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* NAVIGATION DIV - Horizontal menu */
+        .nav-div {
+            background: #2c3e50;
+            padding: 1rem;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .nav-links a:hover { background: #3498db; }
+
+        /* MAIN CONTENT DIV - Container */
+        .main-div {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        /* CONTENT SECTION DIV */
+        .content-div {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* SIDEBAR DIV */
+        .sidebar-div {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .widget-div {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        /* SPAN INLINE STYLING EXAMPLES */
+        .highlight-span { 
+            background: #ffeb3b; 
+            padding: 0.2rem 0.5rem; 
+            border-radius: 4px; 
+            font-weight: bold;
+        }
+        .important-span { 
+            color: #e74c3c; 
+            font-weight: bold; 
+            font-size: 1.1em;
+        }
+        .code-span { 
+            background: #2c3e50; 
+            color: #ecf0f1; 
+            padding: 0.2rem 0.4rem; 
+            border-radius: 4px; 
+            font-family: monospace;
+        }
+
+        /* FOOTER DIV */
+        .footer-div {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-div { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER DIV (Block-level container) -->
+    <div class="header-div">
+        <h1><span class="highlight-span">Div</span> & <span class="highlight-span">Span</span> Layout Mastery</h1>
+        <p>Block-level <span class="code-span">&lt;div&gt;</span> containers + Inline <span class="code-span">&lt;span&gt;</span> styling</p>
+    </div>
+
+    <!-- NAVIGATION DIV -->
+    <div class="nav-div">
+        <div class="nav-links">
+            <a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a>
+            <a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div" target="_blank">MDN div Docs</a>
+            <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a>
+        </div>
+    </div>
+
+    <!-- MAIN LAYOUT DIVS -->
+    <div class="main-div">
+        <!-- MAIN CONTENT AREA -->
+        <div class="content-div">
+            <h2>🎯 <span class="important-span">Div vs Span</span> Explained</h2>
+            <p>
+                <span class="code-span">&lt;div&gt;</span> = <strong>Block-level</strong> - Takes full width, starts new line<br>
+                <span class="code-span">&lt;span&gt;</span> = <strong>Inline</strong> - Flows with text, no line breaks
+            </p>
+            
+            <h3>Div Layout Structure:</h3>
+            <ul style="margin: 1rem 0;">
+                <li><span class="highlight-span">.header-div</span> - Full-width banner</li>
+                <li><span class="highlight-span">.nav-div</span> - Navigation bar</li>
+                <li><span class="highlight-span">.main-div</span> - CSS Grid container</li>
+                <li><span class="highlight-span">.content-div</span> - Main articles</li>
+                <li><span class="highlight-span">.sidebar-div</span> - Right sidebar</li>
+            </ul>
+
+        <!-- SIDEBAR with WIDGET DIVS -->
+        <div class="sidebar-div">
+            <!-- WIDGET 1 -->
+            <div class="widget-div">
+                <h3><span class="highlight-span">Span</span> Examples</h3>
+                <p>Inline styling inside text:</p>
+                <p>This is <span class="highlight-span">highlighted</span> with span.</p>
+                <p><span class="important-span">IMPORTANT</span> text styling.</p>
+                <p>Code: <span class="code-span">&lt;span class="highlight"&gt;&lt;/span&gt;</span></p>
+            </div>
+
+            <!-- WIDGET 2 -->
+            <div class="widget-div">
+                <h3>Quick Tips</h3>
+                <ul style="line-height: 2;">
+                    <li>Use <span class="code-span">div</span> for layout blocks</li>
+                    <li>Use <span class="code-span">span</span> for text styling</li>
+                    <li>Combine with CSS classes</li>
+                    <li>Mobile-responsive with media queries</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER DIV -->
+    <div class="footer-div">
+        <p>© 2025 Div & Span Demo | Responsive on mobile</p>
+        <p>Resize browser to see layout adapt → Perfect for your web dev practice!</p>
+    </div>
+</body>
+</html>

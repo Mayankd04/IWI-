@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Design a webpage with an HTML form having text input, radio buttons,checkboxes,select menus, and submit/reset buttons</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], select, textarea { 
+            width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 4px; box-sizing: border-box;
+        }
+        input[type="radio"], input[type="checkbox"] { width: auto; margin-right: 10px; }
+        .radio-group, .checkbox-group { margin-bottom: 10px; }
+        button { background: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px; }
+        button:hover { background: #45a049; }
+        .reset-btn { background: #f44336; }
+        .reset-btn:hover { background: #da190b; }
+        fieldset { border: 2px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        legend { font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    
+    <form name="studentForm" method="POST" action="https://httpbin.org/post">
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="student@example.com" required>
+        </div>
+        
+        <fieldset>
+            <legend>Gender</legend>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="Male" checked>
+                <label for="male">Male</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </fieldset>
+        
+        <div class="form-group">
+            <label>Programming Languages (Select multiple):</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="html" name="languages[]" value="HTML">
+                <label for="html">HTML/CSS</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="javascript" name="languages[]" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="c" name="languages[]" value="C">
+                <label for="c">C Programming</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="python" name="languages[]" value="Python">
+                <label for="python">Python</label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Choose your course...</option>
+                <option value="web-dev">Web Development</option>
+                <option value="programming">Programming Fundamentals</option>
+                <option value="data-science">Data Science</option>
+                <option value="mobile-app">Mobile App Development</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your learning goals..."></textarea>
+        </div>
+        
+        <button type="submit">Submit Registration</button>
+        <button type="reset" class="reset-btn">Reset Form</button>
+    </form>
+    
+    <hr>
+    <p><strong>Test it:</strong> Submit sends to httpbin.org (shows your data). Reset clears everything. Perfect for your HTML/CSS learning!</p>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<html>
+<head>
+    <title>Create a responsive web page using media queries and mobile-first design with flexible units</title>
+    <style>
+        /* MOBILE-FIRST BASE STYLES (0px and up) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0.5rem 0.25rem;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        /* TABLET - min-width: 768px */
+        @media (min-width: 768px) {
+            .container {
+                padding: 2rem;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                height: 70vh;
+            }
+
+            .cards {
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+            .card {
+                flex: 1;
+            }
+        }
+
+        /* DESKTOP - min-width: 1024px */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1200px;
+                padding: 3rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .cards {
+                gap: 3rem;
+            }
+        }
+
+        /* LARGE DESKTOP - min-width: 1440px */
+        @media (min-width: 1440px) {
+            .hero {
+                height: 80vh;
+            }
+        }
+
+        /* LANDSCAPE ORIENTATION */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .hero {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Responsive Web Design</h1>
+        <p>Mobile-First + Media Queries + Flexible Units</p>
+    </header>
+
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h2>Perfect on Every Device</h2>
+            <p>Resize this page to see mobile → tablet → desktop layouts change live!</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design" class="btn" target="_blank">
+                MDN Responsive Guide
+            </a>
+        </section>
+
+        <!-- FEATURE CARDS -->
+        <section class="cards">
+            <div class="card">
+                <h3>📱 Mobile First</h3>
+                <p>Base styles target phones first (0px+). Media queries add styles for larger screens using <code>min-width</code>.</p>
+                <ul style="margin-top: 1rem;">
+                    <li>Flexible %/rem/em units</li>
+                    <li>Flexbox for layout</li>
+                    <li>Real Unsplash hero image</li>
+                </ul>
+                <a href="https://www.freecodecamp.org/news/responsive-web-design-media-queries/" class="btn" target="_blank">
+                    freeCodeCamp Tutorial
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>🖥️ Breakpoints Used</h3>
+                <p>Standard industry breakpoints:</p>
+                <ul style="margin-top: 1rem;">
+                    <li><strong>768px:</strong> Tablets (Portrait)</li>
+                    <li><strong>1024px:</strong> Small Desktop</li>
+                    <li><strong>1440px:</strong> Large Desktop</li>
+                </ul>
+                <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" class="btn" target="_blank">
+                    CSS-Tricks Guide
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>🔧 Flexible Units</h3>
+                <p>No fixed pixels! Uses:</p>
+                <ul style="margin-top: 1rem;">
+                    <li><code>%</code> for widths</li>
+                    <li><code>rem</code> for spacing</li>
+                    <li><code>vh</code> for hero height</li>
+                    <li><code>flex: 1</code> for cards</li>
+                </ul>
+                <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" class="btn" target="_blank">
+                    W3Schools Demo
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Responsive Demo | <strong>All links work!</strong> | Built with Mobile-First CSS</p>
+        <p>Resize browser → Watch layout change live! 📐</p>
+    </footer>
+</body>
+</html>

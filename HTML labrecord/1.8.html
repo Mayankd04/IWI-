@@ -1,0 +1,176 @@
+<html>
+<head>
+    <title>Demonstrate the use of different CSS selectors (class, id, descendant, group, universal)</title>
+    <style>
+        /* ===========================================
+           CSS SELECTOR TYPES DEMONSTRATION
+        ============================================ */
+
+        /* 1. UNIVERSAL SELECTOR * - Targets ALL elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 2. ELEMENT SELECTOR - Targets all h2 tags */
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* 3. CLASS SELECTOR .demo-class - Multiple elements */
+        .demo-class {
+            background: #e8f5e8;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #27ae60;
+            border-radius: 5px;
+        }
+
+        /* 4. ID SELECTOR #unique-id - ONE specific element only */
+        #unique-id {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 25px;
+            border: 3px dashed #e74c3c;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* 5. GROUP SELECTOR - Multiple selectors together */
+        h3, p, ul {
+            margin-bottom: 15px;
+        }
+
+        /* 6. DESCENDANT SELECTOR - Space between (article p) */
+        article p {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        /* 7. CHILD SELECTOR > - Direct children only */
+        section > div {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        /* 8. ADJACENT SIBLING + - Immediately after */
+        h4 + p {
+            color: #e67e22;
+            font-weight: bold;
+        }
+
+        /* 9. GENERAL SIBLING ~ - All siblings after */
+        h4 ~ ul {
+            border-top: 2px solid #f39c12;
+            padding-top: 15px;
+        }
+
+        /* 10. ATTRIBUTE SELECTOR [type="text"] */
+        input[type="text"] {
+            border: 2px solid #3498db;
+            padding: 8px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 CSS Selectors - Complete Demo</h1>
+        
+        <!-- UNIVERSAL SELECTOR * -->
+        <div class="demo-class">
+            <h2>1. Universal Selector (*) ⭐</h2>
+            <p><strong>* { margin: 0; }</strong> - Removes default margins/padding from <em>ALL</em> elements on page.</p>
+            <p>Applied to every HTML element automatically!</p>
+        </div>
+
+        <!-- CLASS SELECTOR -->
+        <div class="demo-class">
+            <h2>2. Class Selector (.demo-class) 🟢</h2>
+            <p class="demo-class">All elements with <code>class="demo-class"</code> get green background + left border.</p>
+            <p class="demo-class">Multiple elements can share the same class!</p>
+        </div>
+
+        <!-- ID SELECTOR -->
+        <div id="unique-id">
+            <h2>3. ID Selector (#unique-id) 🔴</h2>
+            <p><strong>#unique-id</strong> targets ONLY this specific div. IDs must be unique!</p>
+            <p>Gradient background + dashed red border = ID selector power.</p>
+        </div>
+
+        <!-- GROUP SELECTOR -->
+        <section>
+            <h2>4. Group Selector (h3, p, ul) 🔵</h2>
+            <!-- Child selector demo -->
+            <div>
+                <h3>Child Selector (section > div)</h3>
+                <p>This yellow background is direct child of section.</p>
+            </div>
+            <div>
+                <p>This is also a direct child (yellow).</p>
+            </div>
+            <p>This paragraph is NOT a direct child (no yellow).</p>
+        </section>
+
+        <!-- DESCENDANT SELECTOR -->
+        <article>
+            <h2>5. Descendant Selector (article p) 🟣</h2>
+            <p>This paragraph inside article is italic + gray (descendant selector).</p>
+            <div>
+                <p>This nested paragraph is ALSO styled (all descendants).</p>
+            </div>
+        </article>
+
+        <!-- SIBLING SELECTORS -->
+        <div>
+            <h2>6. Sibling Selectors</h2>
+            <h4>Adjacent Sibling (+)</h4>
+            <p>This orange bold text follows h4 immediately (+ selector).</p>
+            <span>Adjacent spans are NOT affected.</span>
+            
+            <h4>General Sibling (~)</h4>
+            <ul>This ul and all following siblings get top border (~ selector).</ul>
+            <li>Second list item</li>
+            <p>Even paragraphs after h4 get affected by ~</p>
+        </div>
+
+        <!-- ATTRIBUTE SELECTOR -->
+        <div class="demo-class">
+            <h2>7. Attribute Selector [type="text"] ⚫</h2>
+            <label>Normal input:</label>
+            <input type="text" placeholder="Blue border!">
+            <br><br>
+            <label>Other input:</label>
+            <input type="email" placeholder="No special styling">
+        </div>
+
+        <h2>CSS Selector Priority</h2>
+        <p><strong>Order:</strong> Inline > ID > Class > Element > Universal</p>
+        <ul>
+            <li><strong>ID (#unique-id)</strong> = Highest priority</li>
+            <li><strong>Class (.demo-class)</strong> = Medium priority</li>
+            <li><strong>Element (h2, p)</strong> = Lower priority</li>
+        </ul>
+    </div>
+</body>
+</html>
